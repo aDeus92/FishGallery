@@ -4,6 +4,7 @@ import androidx.compose.ui.graphics.Color
 
 val PrimaryColor = Color(0xFFEEF4F3)
 val OnPrimaryColor = Color(0xFF518DAF)
+val BackgroundColor = Color(0xFFACCFF3)
 val SecondaryColor = Color(0xFFFFFFFF)
 val OnSecondaryColor = Color(0xFF9ECBC6)
 val SurfaceColor = Color(0xFFFFFFFF)
