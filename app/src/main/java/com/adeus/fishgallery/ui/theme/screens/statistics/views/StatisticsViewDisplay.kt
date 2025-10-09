@@ -4,12 +4,13 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -26,9 +27,9 @@ fun StatisticsViewDisplay() {
     val shapeCard = RoundedCornerShape(topStart = 8.dp, topEnd = 12.dp, bottomEnd = 8.dp)
     val shapeCard2 =
         RoundedCornerShape(topStart = 8.dp, topEnd = 0.dp, bottomStart = 12.dp, bottomEnd = 8.dp)
+    val modSize = Modifier.fillMaxSize()
     Column(
         modifier = Modifier
-            .fillMaxSize()
             .background(PrimaryColor)
             .padding(20.dp)
             .verticalScroll(rememberScrollState())
@@ -37,18 +38,20 @@ fun StatisticsViewDisplay() {
         Text(text = stringResource(R.string.header_title))
 
         Column(modifier = Modifier.padding(bottom = 30.dp)) {
-            StatisticsCard("Наш улов", "~108 000 000", "тонн", Modifier, shapeCard)
+            StatisticsCard("Наш улов", "~108 000 000", "тонн", modSize, shapeCard)
         }
         Column(modifier = Modifier.padding(bottom = 20.dp)) {
-            StatisticsCard("Наша прибыль", ">5 400 000", "кредитов", Modifier, shapeCard2)
+            StatisticsCard("Наша прибыль", ">5 400 000", "кредитов", modSize, shapeCard2)
         }
         Column (modifier = Modifier.padding(bottom = 20.dp)) {
-            StatisticsCard("Наши партнёры", "1 500+", "партнеров", Modifier, shapeCard)
+            StatisticsCard("Наши партнёры", "1 500+", "партнеров", modSize, shapeCard)
         }
         Column {
             Row {
-                Text(text = stringResource(R.string.footer_title))
-                JetRoundIcon(R.drawable.ic_launcher_foreground,Modifier)
+                Text(text = stringResource(R.string.footer_title)
+
+                )
+                JetRoundIcon(R.drawable.ic_launcher_foreground,Modifier.size(50.dp))
             }
         }
     }
