@@ -12,4 +12,6 @@ val OnSurfaceColor = Color(0xFFC8DAC7)
 val black = Color(0xFF000000)
 val white = Color(0xFFFFFFFF)
 
+val TextColor = Color(0xFFACACAC)
+
 
