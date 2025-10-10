@@ -16,9 +16,9 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adeus.fishgallery.R
-import com.adeus.fishgallery.ui.theme.BackgroundColor
 import com.adeus.fishgallery.ui.theme.FishGalleryTheme
 import com.adeus.fishgallery.ui.theme.OnPrimaryColor
+import com.adeus.fishgallery.ui.theme.OnSecondaryColor
 import com.adeus.fishgallery.ui.theme.Shapes
 
 
@@ -27,7 +27,7 @@ fun JetRoundIcon(drawable:Int,modifier: Modifier){
     Box(
         modifier = modifier
             .clip(Shapes.large)
-            .background(BackgroundColor)
+            .background(OnSecondaryColor)
             .border(2.dp, OnPrimaryColor, shape = CircleShape)
             .padding(2.dp),
         contentAlignment = Alignment.Center

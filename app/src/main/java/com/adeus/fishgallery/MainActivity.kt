@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.adeus.fishgallery.ui.theme.FishGalleryTheme
+import com.adeus.fishgallery.ui.theme.screens.statistics.views.StatisticsViewDisplay
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,6 +13,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             FishGalleryTheme {
+                StatisticsViewDisplay()
+
             }
         }
     }
