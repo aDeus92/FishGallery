@@ -9,4 +9,10 @@
     <string name="our_profit_value">> 5 400 000 credits</string>
     <string name="our_partners_value">1500+ partners</string>
     <string name="currency_value">%s credits</string>
+    <string name="ghost_dolphin">Ghost Dolphin</string>
+    <string name="diamond_moustache">Diamond Moustache</string>
+    <string name="the_six_first_shark">The six-first shark</string>
+    <string name="tons_50">50,000,000 tons</string>
+    <string name="tons_48">48,000,000 tons</string>
+    <string name="tons_10">10,000,000 tons</string>
 </resources>

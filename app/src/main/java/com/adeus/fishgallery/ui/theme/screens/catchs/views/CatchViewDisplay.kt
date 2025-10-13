@@ -15,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -36,12 +37,14 @@ fun CatchViewDisplay() {
             .fillMaxSize()
             .background(PrimaryColor)
             .verticalScroll(state = rememberScrollState(), true),
-       horizontalAlignment = Alignment.CenterHorizontally,
+        horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Row(modifier = Modifier.fillMaxWidth()
-            .padding(start = 20.dp)
-        ){
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 20.dp)
+        ) {
             JetIconButton(
                 R.drawable.ic_left,
                 Modifier,
@@ -51,15 +54,15 @@ fun CatchViewDisplay() {
 
             Text(
                 modifier = Modifier.fillMaxWidth(),
-                text = "Наш улов",
+                text = stringResource(R.string.our_catch_title),
                 color = OnPrimaryColor,
                 fontWeight = FontWeight.Bold,
                 fontSize = 32.sp,
                 textAlign = TextAlign.Center
             )
         }
-        CatchCard("Призрачный дельфин","50 000 000 тонн", fishList[0], Modifier)
-        CatchCard("Алмазный ус","48 000 000 тонн", fishList[1], Modifier)
-        CatchCard("Шестипервая акула","10 000 000 тонн", fishList[2], Modifier)
+        CatchCard(stringResource(R.string.ghost_dolphin), stringResource(R.string.tons_50), fishList[0], Modifier)
+        CatchCard(stringResource(R.string.diamond_moustache), stringResource(R.string.tons_48), fishList[1], Modifier)
+        CatchCard(stringResource(R.string.the_six_first_shark), stringResource(R.string.tons_10), fishList[2], Modifier)
     }
 }
