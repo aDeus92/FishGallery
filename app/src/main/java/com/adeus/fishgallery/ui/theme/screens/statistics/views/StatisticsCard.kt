@@ -10,13 +10,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.adeus.fishgallery.R
 import com.adeus.fishgallery.ui.theme.FishGalleryTheme
-import com.adeus.fishgallery.ui.theme.OnPrimaryColor
 import com.adeus.fishgallery.ui.theme.OnSecondaryColor
-import com.adeus.fishgallery.ui.theme.OnSurfaceColor
 import com.adeus.fishgallery.ui.theme.SurfaceColor
 import com.adeus.fishgallery.ui.theme.utils.dashedBorder
 
@@ -24,7 +25,6 @@ import com.adeus.fishgallery.ui.theme.utils.dashedBorder
 fun StatisticsCard(
     label: String,
     text: String,
-    text2:String,
     modifier: Modifier,
     shape: RoundedCornerShape
 ) {
@@ -41,20 +41,17 @@ fun StatisticsCard(
         Text(
             text = label,
             fontSize = 20.sp,
-            color = OnPrimaryColor
+            fontWeight = FontWeight.Bold,
+            color = OnSecondaryColor
         )
         Row(modifier = Modifier.padding(top = 20.dp)) {
             Text(
                 text = text,
                 fontSize = 25.sp,
+                fontWeight = FontWeight.Bold,
                 color = OnSecondaryColor
             )
-            Text(
-                modifier = modifier.padding(start = 10.dp),
-                text = text2,
-                fontSize = 24.sp,
-                color = OnSurfaceColor
-            )
+
         }
     }
 }
@@ -64,6 +61,6 @@ fun StatisticsCard(
 private fun StatPreview() {
     FishGalleryTheme {
         val shapeCard = RoundedCornerShape(topStart = 8.dp, topEnd = 12.dp, bottomEnd = 8.dp)
-        StatisticsCard("Наш улов", "~108 000 000","тонн", Modifier, shapeCard)
+        StatisticsCard(stringResource(R.string.our_partners_title), stringResource(R.string.our_partners_value), Modifier, shapeCard)
     }
 }

@@ -6,8 +6,8 @@
     <string name="our_catch_title">Наш улов</string>
     <string name="our_profit_title">Наша прибыль</string>
     <string name="our_partners_title">Наши партнеры</string>
-    <string name="our_catch_value">~ %s тонн</string>
-    <string name="our_profit_value">> %s кредитов</string>
-    <string name="our_partners_value">%s+ партнеров</string>
+    <string name="our_catch_value">~108 000 000 тонн</string>
+    <string name="our_profit_value">> 5 400 000 кредитов</string>
+    <string name="our_partners_value">1500+ партнеров</string>
     <string name="currency_value">%s кредитов\t</string>
 </resources>

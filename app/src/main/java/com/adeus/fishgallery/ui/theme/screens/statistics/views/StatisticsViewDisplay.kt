@@ -2,7 +2,6 @@ package com.adeus.fishgallery.ui.theme.screens.statistics.views
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -24,7 +23,6 @@ import com.adeus.fishgallery.R
 import com.adeus.fishgallery.ui.theme.BackgroundColor
 import com.adeus.fishgallery.ui.theme.FishGalleryTheme
 import com.adeus.fishgallery.ui.theme.OnPrimaryColor
-import com.adeus.fishgallery.ui.theme.components.JetIconButton
 import com.adeus.fishgallery.ui.theme.components.JetRoundIcon
 import com.adeus.fishgallery.ui.theme.fonts
 
@@ -40,7 +38,7 @@ fun StatisticsViewDisplay() {
         .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Column() {
+        Column {
             Text(
                 text = stringResource(R.string.header_title),
                 fontSize = 20.sp,
@@ -51,13 +49,13 @@ fun StatisticsViewDisplay() {
             )
 
             Column(modifier = Modifier.padding(bottom = 30.dp)) {
-                StatisticsCard("Наш улов", "~108 000 000", "тонн", modSize, shapeCard)
+                StatisticsCard(stringResource(R.string.our_catch_title), stringResource(R.string.our_catch_value), modSize, shapeCard)
             }
             Column(modifier = Modifier.padding(bottom = 20.dp)) {
-                StatisticsCard("Наша прибыль", ">5 400 000", "кредитов", modSize, shapeCard2)
+                StatisticsCard(stringResource(R.string.our_profit_title), stringResource(R.string.our_profit_value), modSize, shapeCard2)
             }
             Column(modifier = Modifier.padding(bottom = 20.dp)) {
-                StatisticsCard("Наши партнёры", "1 500+", "партнеров", modSize, shapeCard)
+                StatisticsCard(stringResource(R.string.our_partners_title), stringResource(R.string.our_partners_value), modSize, shapeCard)
             }
 
         }
