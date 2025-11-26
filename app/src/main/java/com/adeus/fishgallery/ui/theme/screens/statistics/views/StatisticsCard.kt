@@ -1,6 +1,7 @@
 package com.adeus.fishgallery.ui.theme.screens.statistics.views
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -9,6 +10,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -26,15 +28,19 @@ fun StatisticsCard(
     label: String,
     text: String,
     modifier: Modifier,
-    shape: RoundedCornerShape
+    shape: RoundedCornerShape,
+    onClick: () -> Unit
 ) {
     Column(
         modifier = modifier
             .background(SurfaceColor, shape = shape)
             .dashedBorder(1.dp, Color.LightGray, shape, 4.dp, 4.dp)
-            .padding(start = 10.dp, top = 10.dp, end = 20.dp, bottom = 30.dp),
-        verticalArrangement = Arrangement.Bottom
+            .clickable(onClick = onClick)
+            .clip(shape)
+            .padding(start = 10.dp, top = 10.dp, end = 20.dp, bottom = 30.dp)
 
+        ,
+        verticalArrangement = Arrangement.Bottom
 
 
     ) {
@@ -61,6 +67,12 @@ fun StatisticsCard(
 private fun StatPreview() {
     FishGalleryTheme {
         val shapeCard = RoundedCornerShape(topStart = 8.dp, topEnd = 12.dp, bottomEnd = 8.dp)
-        StatisticsCard(stringResource(R.string.our_partners_title), stringResource(R.string.our_partners_value), Modifier, shapeCard)
+        StatisticsCard(
+            stringResource(R.string.our_partners_title),
+            stringResource(R.string.our_partners_value),
+            Modifier,
+            shapeCard,
+            onClick = {}
+        )
     }
 }

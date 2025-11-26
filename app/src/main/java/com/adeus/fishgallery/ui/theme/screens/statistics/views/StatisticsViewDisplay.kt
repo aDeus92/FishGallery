@@ -1,6 +1,7 @@
 package com.adeus.fishgallery.ui.theme.screens.statistics.views
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -49,13 +51,13 @@ fun StatisticsViewDisplay() {
             )
 
             Column(modifier = Modifier.padding(bottom = 30.dp)) {
-                StatisticsCard(stringResource(R.string.our_catch_title), stringResource(R.string.our_catch_value), modSize, shapeCard)
+                StatisticsCard(stringResource(R.string.our_catch_title), stringResource(R.string.our_catch_value), modSize, shapeCard,{})
             }
             Column(modifier = Modifier.padding(bottom = 20.dp)) {
-                StatisticsCard(stringResource(R.string.our_profit_title), stringResource(R.string.our_profit_value), modSize, shapeCard2)
+                StatisticsCard(stringResource(R.string.our_profit_title), stringResource(R.string.our_profit_value), modSize, shapeCard2,{})
             }
             Column(modifier = Modifier.padding(bottom = 20.dp)) {
-                StatisticsCard(stringResource(R.string.our_partners_title), stringResource(R.string.our_partners_value), modSize, shapeCard)
+                StatisticsCard(stringResource(R.string.our_partners_title), stringResource(R.string.our_partners_value), modSize, shapeCard,{})
             }
 
         }
@@ -75,7 +77,7 @@ fun StatisticsViewDisplay() {
                     color = OnPrimaryColor
 
                 )
-                JetRoundIcon(R.drawable.ic_launcher_foreground, Modifier.size(50.dp))
+                JetRoundIcon(R.drawable.ic_launcher_foreground, Modifier.size(50.dp).clickable(onClick = {}).clip(shapeCard))
             }
         }
     }
